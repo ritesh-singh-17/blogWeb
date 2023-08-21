@@ -10,7 +10,7 @@ const AuthProvider = ({ children }) => {
 
     const login = async (inputs) => {
         console.log("hello")
-        const res = await axios.post("https://blogweb-hwnx.onrender.com/api/auth/login", inputs,{
+        const res = await axios.post("https://blogweb-backend.onrender.com/api/auth/login", inputs,{
             headers:{
                 "Content-Type":"application/json"
             },
@@ -20,7 +20,7 @@ const AuthProvider = ({ children }) => {
         setCurrentUser(res.data)
     }
     const logout = async () => {
-        axios.get("https://blogweb-hwnx.onrender.com/api/auth/logout")
+        axios.get("https://blogweb-backend.onrender.com/api/auth/logout")
         .then(res => {
             window.location.reload(true);
           }).catch(err => console.log(err));

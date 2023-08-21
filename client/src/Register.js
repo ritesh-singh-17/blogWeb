@@ -18,7 +18,7 @@ const Register = () => {
   const handleSubmit =async (e) => {
     e.preventDefault();
     try{
-      const res= await axios.post("https://blogweb-hwnx.onrender.com/api/auth/register",inputs,{
+      const res= await axios.post("https://blogweb-backend.onrender.com/api/auth/register",inputs,{
         headers:{
             "Content-Type":"application/json"
         },

@@ -7,7 +7,7 @@ const Menu = ({cat}) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const res = await axios.get(`https://blogweb-hwnx.onrender.com/api/posts/?cat=${cat}`);
+                const res = await axios.get(`https://blogweb-backend.onrender.com/api/posts/?cat=${cat}`);
                 setPosts(res.data);
             } catch (err) {
                 console.log(err);

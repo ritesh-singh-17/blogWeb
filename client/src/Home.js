@@ -39,7 +39,7 @@ const Home = () => {
                     <div className="content">
                       <NavLink className="link" to={`/post/${post.id}`}>
                         <h1>{post.title}</h1>
-                        <p>{getText(post.desc)}</p>
+                        <p>{getText(post.desc).substring(0, 200)}............ </p>
                         <button>Read More</button>
                       </NavLink>
                     </div>

@@ -42,8 +42,8 @@ const Write = () => {
 
   const handleClick = async e => {
     e.preventDefault();
-    const imgurl =await upload();
-    if(file===null){
+    const imgurl = await upload();
+    if (file === null) {
       alert("You have not uploaded any image")
     }
     try {
@@ -69,21 +69,6 @@ const Write = () => {
           </div>
         </div>
         <div className="menu">
-          <div className="item gap-1">
-            <h1>Publish</h1>
-            <span>
-              <b>Status: </b> Draft
-            </span>
-            <span>
-              <b>Visibility: </b> Public
-            </span>
-            <input style={{ display: "none" }} type="file" id='file' name='' onChange={e => setFile(e.target.files[0])} />
-            <label className='file' htmlFor="file">Upload Image</label>
-            <div className="buttons">
-              <button>Save as a draft</button>
-              <button onClick={handleClick}>Publish</button>
-            </div>
-          </div>
           <div className="item">
             <h1>Category</h1>
             <div className="cat">
@@ -109,6 +94,20 @@ const Write = () => {
             <div className="cat">
               <input type="radio" checked={cat === "food"} name="category" value="food" id="food" onChange={e => setCat(e.target.value)} />
               <label htmlFor="food">Food</label>
+            </div>
+          </div>
+          <div className="item gap-1">
+            <h1>Publish</h1>
+            <span>
+              <b>Status: </b> Draft
+            </span>
+            <span>
+              <b>Visibility: </b> Public
+            </span>
+            <input style={{ display: "none" }} type="file" id='file' name='' onChange={e => setFile(e.target.files[0])} />
+            <label className='file' htmlFor="file">Upload Image</label>
+            <div className="buttons">
+              <button onClick={handleClick}>Publish</button>
             </div>
           </div>
         </div>

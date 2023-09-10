@@ -43,19 +43,19 @@ const Single = () => {
     const doc = new DOMParser().parseFromString(html, "text/html")
     return doc.body.textContent;
   }
-  
+
   return (
     <>
-      <div className="single">
+      <div className="single container">
         <div className="content">
-        <img src={post?.postimg} alt="singlePostImage" />
+          <img src={post?.postimg} alt="singlePostImage" />
           <div className="user">
             {post?.userimg && <img src={post?.userimg} alt="" />}
             <div className="info">
               <span>{post?.username}</span>
               <p className='m-0'>Posted {moment(post?.date).fromNow()}</p>
             </div>
-            {(currentUser?.username)===(post?.username) && <div className="edit">
+            {(currentUser?.username) === (post?.username) && <div className="edit">
               <NavLink to={`/write?edit=2`} state={post}>
                 <img src={edit} alt="" />
               </NavLink>
@@ -65,7 +65,7 @@ const Single = () => {
           <h1>{post?.title}</h1>
           {getText(post?.desc)}
         </div>
-        <Menu cat={post?.cat}/>
+        <Menu cat={post?.cat} />
       </div>
     </>
   )

@@ -1,11 +1,11 @@
 import React from 'react'
+import { BsFillHeartFill } from 'react-icons/bs'
 
 const Footer = () => {
   return (
     <>
       <footer>
-        <h2>blogWEB</h2>
-        <span>Made with love by Ritesh Singh</span>
+        <h5> Designed by <span> Ritesh </span> with <span className='icon' ><BsFillHeartFill /></span></h5>
       </footer>
     </>
   )

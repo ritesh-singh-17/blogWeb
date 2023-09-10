@@ -8,13 +8,13 @@ const admin = require('firebase-admin')
 const serviceAccount = require('./serviceAccountKey.json')
 const multer = require('multer');
 require('dotenv').config();
-const port = process.env.PORT || 8800;
+const port = process.env.PORT || 8000;
 
 const app = express();
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
-    origin: ["https://blogweb-gjnd.onrender.com"],
+    origin: ["https://blogweb-gjnd.onrender.com/"],
     methods: ["POST", "GET", "DELETE`", "PUT"],
     credentials: true
 }));

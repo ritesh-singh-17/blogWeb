@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 
@@ -61,11 +61,15 @@
 
     //navbar
     .navbar {
-        padding: 0.5rem 5rem;
+        padding: 0.5rem 8%;
         color: teal;
-        .logo{
-            padding-left: 50px;
+        box-shadow: 2px 2px 3px rgb(215, 215, 215);
+        margin-bottom: 2rem;
+
+        .logo {
+            padding-left: 0%;
         }
+
         .links {
             display: flex;
             align-items: center;
@@ -85,7 +89,7 @@
                 align-items: center;
                 justify-content: center;
                 transition: all 0.3s ease;
-                
+
                 &:hover {
                     color: teal;
                     background-color: white !important;
@@ -105,30 +109,41 @@
         align-items: center;
         justify-content: space-around;
         font-size: 16px;
+
+        span {
+            font-weight: 700;
+        }
+
+        .icon {
+            color: red;
+        }
     }
 
     //home page
-    .home{
+    .home {
         min-height: 55.9vh;
-        .posts{
+
+        .posts {
             margin-top: 50px;
             display: flex;
             flex-direction: column;
             gap: 150px;
 
-            .post{
+            .post {
                 display: flex;
+                align-items: center;
                 gap: 50px;
 
-                &:nth-child(2n+1){
+                &:nth-child(2n+1) {
                     flex-direction: row-reverse;
                 }
 
-                .img{
+                .img {
                     flex: 2;
+                    height: 100%;
                     position: relative;
 
-                    &::after{
+                    &::after {
                         content: "";
                         width: 100%;
                         height: 100%;
@@ -139,27 +154,28 @@
                         z-index: -1;
                     }
 
-                    img{
+                    img {
                         width: 100%;
                         max-height: 300px;
                         object-fit: cover;
                     }
                 }
 
-                .content{
+                .content {
                     flex: 3;
                     display: flex;
                     flex-direction: column;
                     justify-content: space-around;
 
-                    h1{
-                        font-size: 48px;
+                    h1 {
+                        font-size: 2.5rem;
                     }
-                    p{
+
+                    p {
                         font-size: 18px;
                     }
 
-                    button{
+                    button {
                         width: max-content;
                         padding: 10px 20px;
                         border: none;
@@ -168,7 +184,7 @@
                         border: 1px solid #b9e7e7;
                         color: teal;
 
-                        &:hover{
+                        &:hover {
                             border: 1px solid black;
                             color: black;
                             background-color: #b9e7e7;
@@ -180,141 +196,151 @@
     }
 
     //single page
-    .single{
+    .single {
         display: flex;
         gap: 50px;
 
-        .content{
+        .content {
             flex: 5;
             display: flex;
             flex-direction: column;
             gap: 30px;
 
-            img{
+            img {
                 width: 100%;
                 height: 300px;
-                object-fit: cover; 
+                object-fit: cover;
             }
 
-            .user{
+            .user {
                 display: flex;
                 align-items: center;
                 gap: 10px;
                 padding: 5px;
 
-                img{
+                img {
                     width: 50px;
                     height: 50px;
                     border-radius: 50%;
                     object-fit: cover;
                 }
 
-                span{
+                span {
                     font-weight: bold;
                 }
             }
 
-            .edit{
+            .edit {
                 display: flex;
                 align-items: center;
 
                 gap: 5px;
 
-                img{
+                img {
                     width: 20px;
                     height: 20px;
                     cursor: pointer;
                 }
             }
 
-            h1{
+            h1 {
                 color: #333;
             }
-            p{
+
+            p {
                 text-align: justify;
             }
         }
 
-        .menu{
+        .menu {
             flex: 2;
             display: flex;
             flex-direction: column;
             gap: 25px;
-
-            h1{
+            
+            h1 {
                 font-size: 20px;
                 color: #555;
             }
 
-            .post{
+            .menuPosts {
                 display: flex;
                 flex-direction: column;
-                gap: 10px;
+                gap: 25px;
 
-                img{
-                    width: 100%;
-                    height: 200px;
-                    object-fit: cover;
-                }
 
-                h5{
-                    color: #555;
-                }
+                .post {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                    box-shadow: 2px 2px 5px rgb(195, 195, 195);
+                    padding: 5% 5%;
 
-                button{
-                    width: max-content;
-                    padding: 7.5px 15px;
-                    border: none;
-                    cursor: pointer;
-                    background-color: white;
-                    border: 1px solid #b9e7e7;
-                    color: teal;
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
 
-                    &:hover{
-                        border: 1px solid whitw;
-                        color: black;
-                        background-color: #b9e7e7;
+                    h5 {
+                        color: #555;
+                    }
+
+                    button {
+                        width: max-content;
+                        padding: 7.5px 15px;
+                        border: none;
+                        cursor: pointer;
+                        background-color: white;
+                        border: 1px solid #b9e7e7;
+                        color: teal;
+
+                        &:hover {
+                            border: 1px solid whitw;
+                            color: black;
+                            background-color: #b9e7e7;
+                        }
                     }
                 }
             }
         }
     }
 
-    .add{
+    .add {
         margin-top: 20px;
         display: flex;
         gap: 20px;
 
-        .content{
+        .content {
             flex: 5;
             display: flex;
             flex-direction: column;
             gap: 20px;
 
-            input{
+            input {
                 padding: 10px;
                 border: 1px solid lightgray;
             }
 
-            .editorContainer{
+            .editorContainer {
                 height: 300px;
                 overflow: scroll;
                 border: 1px solid lightgray;
 
-                .editor{
+                .editor {
                     height: 100%;
                     border: none;
                 }
             }
         }
 
-        .menu{
+        .menu {
             flex: 2;
             display: flex;
             flex-direction: column;
             gap: 20px;
 
-            .item{
+            .item {
                 border: 1px solid lightgray;
                 padding: 10px;
                 flex: 1;
@@ -323,40 +349,167 @@
                 justify-content: space-between;
                 color: #555;
 
-                h1{
+                h1 {
                     font-size: 20px;
                 }
-                .file{
+
+                .file {
                     text-decoration: underline;
                     cursor: pointer;
                 }
-                .buttons{
+
+                .buttons {
                     display: flex;
                     justify-content: space-between;
 
-                    :first-child{
-                        cursor: pointer;
-                        color: teal;
-                        background-color: white;
-                        border: 1px solid teal;
-                        padding: 3px 5px;
-                    }
-                    :last-child{
+                    button {
                         cursor: pointer;
                         color: white;
                         background-color: teal;
                         border: 1px solid white;
-                        padding: 3px 5px;
+                        padding: 5px 10px;
                     }
                 }
 
-                .cat{
+                .cat {
                     display: flex;
                     align-items: center;
                     gap: 2px;
                     color: teal;
                 }
             }
+        }
+    }
+}
+
+
+@media(max-width: 992px) {
+    .posts .post {
+        display: flex;
+
+        .img {
+            flex: 1 !important;
+        }
+
+        .content {
+            flex: 1 !important;
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            p {
+                font-size: 1rem !important;
+            }
+
+            button {
+                padding: 4% !important;
+            }
+        }
+    }
+}
+
+@media(max-width: 768px) {
+    .posts .post {
+        display: flex;
+
+        .img {
+            flex: 1 !important;
+        }
+
+        .content {
+            flex: 1 !important;
+
+            h1 {
+                font-size: 1.5rem !important;
+            }
+
+            p {
+                display: none !important;
+            }
+        }
+    }
+
+    .single {
+        padding: 0 !important;
+
+        .menu {
+            .post {
+                width: 10rem;
+                gap: 0 !important;
+                box-shadow: 2px 2px 5px rgb(195, 195, 195);
+                padding: 5% 5%;
+
+                img {
+                    height: 100% !important;
+                    object-fit: cover;
+                }
+
+                button {
+                    padding: 5% 10% !important;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width: 576px) {
+    .posts .post {
+        padding-left: 1rem;
+    }
+
+    .single {
+        padding: 2rem !important;
+        flex-direction: column;
+
+        .menuPosts {
+            align-items: center !important;
+            justify-content: center !important;
+            
+            .post{
+                // height: 19rem;
+                min-height: fit-content;
+                width: fit-content;
+            }
+        }
+    }
+    .add {
+        flex-direction: column !important;
+        padding: 0 10% !important;
+    }
+}
+
+@media(max-width: 420px) {
+    .posts .post {
+        box-shadow: 2px 2px 5px rgb(191, 191, 191);
+        flex-direction: column !important;
+        padding: 5% 10%;
+        margin: 5%;
+    }
+
+    .auth {
+        form {
+            padding: 10% !important;
+            width: 80% !important;
+        }
+    }
+}
+
+@media(max-width: 340px) {
+    .posts .post {
+        .content {
+
+            h1 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+@media(max-width: 270px) {
+    footer {
+        h5 {
+            font-size: 1rem !important;
         }
     }
 }

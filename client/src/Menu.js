@@ -1,7 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
+import { NavLink } from 'react-router-dom';
 
-const Menu = ({cat}) => {
+const Menu = ({ cat }) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
@@ -20,15 +21,22 @@ const Menu = ({cat}) => {
         <>
             <div className="menu">
                 <h1>Other posts you may like.</h1>
+                <div className='menuPosts'>
                 {
                     posts.map((post) => {
-                        return (<div className="post" key={post.id}>
-                            <img src={post.postimg} alt="" />
-                            <h5>{post.title}</h5>
-                            <button>Read More</button>
-                        </div>)
+                        return (
+                            <NavLink className="link" to={`/post/${post.id}`}>
+                                <div className="post" key={post.id}>
+                                    <img src={post.postimg} alt="" />
+                                    <h5>{post.title}</h5>
+                                    <a href=""></a>
+                                    <button>Read More</button>
+                                </div>
+                            </NavLink>
+                        )
                     })
                 }
+                </div>
             </div>
         </>
     )

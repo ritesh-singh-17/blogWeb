@@ -3,35 +3,25 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import axios from 'axios';
 
 const Register = () => {
-  const [inputs,setInputs] = useState({
-    username:"",
-    email:"",
-    password:""
+  const [inputs, setInputs] = useState({
+    username: "",
+    email: "",
+    password: ""
   })
-  const[error, setError] = useState(null);
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
 
-  const handleChange = (e) =>{
-    setInputs(prev=>({...prev,[e.target.name]: e.target.value}))
+  const handleChange = (e) => {
+    setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    try{
-      const res= await axios.post("https://blogweb-backend.onrender.com/api/auth/register",inputs,{
-        headers:{
-            "Content-Type":"application/json"
-        },
-withCredidential:true,
-    },{
-      headers:{
-          "Content-Type":"application/json"
-      },
-withCredidential:true,
-  })
+    try {
+      const res = await axios.post("/api/auth/register", inputs)
       console.log(res)
       navigate("/login");
-    }catch(err){
+    } catch (err) {
       setError(err.response.data);
       // console.log(err)
     }

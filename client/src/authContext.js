@@ -9,18 +9,15 @@ const AuthProvider = ({ children }) => {
     axios.defaults.withCredentials = true;
 
     const login = async (inputs) => {
-        console.log("hello")
-        const res = await axios.post("https://blogweb-backend.onrender.com/api/auth/login", inputs,{
-            headers:{
-                "Content-Type":"application/json"
-            },
-    withCredidential:true,
-        })
-        console.log("hello2")
-        setCurrentUser(res.data)
+        try{
+            const res = await axios.post("/api/auth/login", inputs)
+            setCurrentUser(res.data)
+        }catch(e){
+            console.log("error in login...not able to fetch data from server")
+        }
     }
     const logout = async () => {
-        axios.get("https://blogweb-backend.onrender.com/api/auth/logout")
+        axios.get("/api/auth/logout")
         .then(res => {
             window.location.reload(true);
           }).catch(err => console.log(err));

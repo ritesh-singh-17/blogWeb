@@ -36,7 +36,7 @@ const Write = () => {
       await fileRef.put(file); // Upload the file to Firebase Storage
       return await fileRef.getDownloadURL(); // Get the URL of the uploaded file
     } catch (err) {
-      console.log(err);
+      console.log("error in uploading data");
     }
   };
 
@@ -47,9 +47,9 @@ const Write = () => {
       alert("You have not uploaded any image")
     }
     try {
-      state ? await axios.put(`https://blogweb-backend.onrender.com/api/posts/${state.id}`, {
+      state ? await axios.put(`/api/posts/${state.id}`, {
         title, desc: value, cat, img: file ? imgurl : ""
-      }) : await axios.post(`https://blogweb-backend.onrender.com/api/posts/`, {
+      }) : await axios.post(`/api/posts/`, {
         title, desc: value, cat, img: file ? imgurl : "", date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       })
       navigate("/");

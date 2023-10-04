@@ -18,7 +18,7 @@ const Single = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://blogweb-backend.onrender.com/api/posts/${postId}`);
+        const res = await axios.get(`/api/posts/${postId}`);
         setPost(res.data);
       } catch (err) {
         console.log("error erroe")
@@ -31,10 +31,10 @@ const Single = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`https://blogweb-backend.onrender.com/api/posts/${postId}`);
+      await axios.delete(`/api/posts/${postId}`);
       navigate("/");
     } catch (err) {
-      console.log("error erroe")
+      console.log("error in retrieving data from database")
       console.log(err);
     }
   }

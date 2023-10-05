@@ -31,7 +31,7 @@ const Single = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/api/posts/${postId}`);
+      await axios.delete(`https://blogweb-backend.onrender.com/api/posts/${postId}`);
       navigate("/");
     } catch (err) {
       console.log("error in retrieving data from database")

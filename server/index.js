@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser())
 app.use(cors({
-    origin: ["https://blogweb-gjnd.onrender.com/"],
+    origin: "https://blogweb-gjnd.onrender.com",
     methods: ["POST", "GET", "DELETE", "PUT"],
     credentials: true
 }));

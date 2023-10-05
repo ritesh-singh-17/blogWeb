@@ -10,14 +10,14 @@ const AuthProvider = ({ children }) => {
 
     const login = async (inputs) => {
         try{
-            const res = await axios.post("/api/auth/login", inputs)
+            const res = await axios.post("https://blogweb-backend.onrender.com/api/auth/login", inputs)
             setCurrentUser(res.data)
         }catch(e){
             console.log("error in login...not able to fetch data from server")
         }
     }
     const logout = async () => {
-        axios.get("/api/auth/logout")
+        axios.get("https://blogweb-backend.onrender.com/api/auth/logout")
         .then(res => {
             window.location.reload(true);
           }).catch(err => console.log(err));

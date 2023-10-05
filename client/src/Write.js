@@ -47,14 +47,14 @@ const Write = () => {
       alert("You have not uploaded any image")
     }
     try {
-      state ? await axios.put(`/api/posts/${state.id}`, {
+      state ? await axios.put(`https://blogweb-backend.onrender.com/api/posts/${state.id}`, {
         title, desc: value, cat, img: file ? imgurl : ""
-      }) : await axios.post(`/api/posts/`, {
+      }) : await axios.post(`https://blogweb-backend.onrender.com/api/posts/`, {
         title, desc: value, cat, img: file ? imgurl : "", date: moment(Date.now()).format("YYYY-MM-DD HH:mm:ss")
       })
       navigate("/");
     } catch (err) {
-      console.log("error rormr")
+      console.log("error in wrting post")
       console.log(err);
     }
   }

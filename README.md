@@ -1,4 +1,4 @@
-## Portfolio-Website
+## Blog-Website
 Blog website build using React JS, Node JS, Express JS, MySQL
 
 <a href="https://blogweb-gjnd.onrender.com/" target="_blank">**Visit Now** 🚀</a>

@@ -18,7 +18,7 @@ const Single = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/posts/${postId}`);
+        const res = await axios.get(`https://blogweb-backend.onrender.com/api/posts/${postId}`);
         setPost(res.data);
       } catch (err) {
         console.log("error erroe")
